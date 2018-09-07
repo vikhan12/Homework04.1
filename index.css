@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700');
+
+html {
+  font-family: 'Roboto', sans-serif;
+  max-width: 2000px;
+}
+
+body {
+  margin: 0;
+
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "side header " "side content " "footer footer ";
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 0;
+
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+
+side {
+  grid-area: side;
+  margin-left: 0;
+  background-image: linear-gradient(to right, #e8374d, #f25d49);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+}
+
+.info {
+  margin-left: 55px;
+}
+
+.info h1,
+h3 {
+  font-family: 'Arvo', serif;
+  font-weight: 400;
+  color: white;
+}
+
+main {
+  grid-area: content;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 55px;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas: "header" "side" "content" "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto/* Header */
+    minmax(200px, auto)/* Nav */
+    1fr/* Content */
+    minmax(75px, auto)/* Sidebar */
+    auto;
+    /* Footer */
+  }
+}
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.navigation a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: black;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+#about h1 {
+  font-weight: 400;
+  text-transform: uppercase;
+  border-top: 3px solid red;
+  padding-top: 10px;
+  display: inline
+}
+
+main p {
+  line-height: 28px;
+  color: #7c7c7c;
+}
+
+.about_info {
+  padding-top: 15px;
+  display: grid;
+  grid-template-areas: "about_info_left about_info_right "
+}
+
+
+hr {
+  color: #7c7c7c;
+}
+
+.boldtext {
+  font-size: 1em;
+  font-weight: 400;
+  color: black;
+}
+
+
+.about_info_inside {
+  margin-left: 10px;
+  line-height: 28px;
+  color: #7c7c7c;
+}
+
+span {
+  line-height: 50px;
+}
+
+@media (max-width: 850px) {
+  .about_info {
+    grid-template-areas: "about_info_left" "about_info_right";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto/* Header */
+    minmax(200px, auto)/* Nav */
+    1fr/* Content */
+    minmax(15px, auto)/* Sidebar */
+  }
+
+}
+
+@media (max-width: 850px) {
+  .about_info #about_info_left hr {
+    display: none;
+  }
+}
+
+.redstuff {
+  border: 0;
+  margin-top: 10px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+  height: 50px;
+  width: 230px;
+  background-image: linear-gradient(to top, #e8374d, #f25d49);
+  color: white;
+  font-size: 17px;
+}
+
+.buttons {
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-flow;
+  padding: 5px;
+
+}
+
+.buttons form {
+  padding-right: 75px;
+
+}
+
+.redstuff2 {
+  height: 50px;
+  width: 230px;
+  border: 3px solid;
+  border-image-slice: 1;
+
+  border-image-source: linear-gradient(to top, #e8374d, #f25d49);
+  margin-top: 10px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  background-color: white;
+
+  background: linear-gradient(to top, #e8374d, #f25d49);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 17px;
+}
+
+@media(max-width: 1084px) {
+  .buttons form {
+    padding-right: 5%;
+
+  }
+}
+
+@media(max-width: 947px) {
+  .buttons form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+
+  }
+}
